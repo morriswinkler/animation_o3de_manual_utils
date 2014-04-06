@@ -3,7 +3,7 @@ O3DE Manual Utils
 
 Blender addon with a toolbar to facilitate the creation of Open Source Hardware assembly manuals.
 
-To get an idea see oure i3 Berlin 3D Printer assembly Manual [here.](https://github.com/open3dengineering/i3_Berlin/wiki/Section-2-Assembly-of-the-Y-Unit)
+To get an idea see our i3 Berlin 3D Printer assembly Manual [here.](https://github.com/open3dengineering/i3_Berlin/wiki/Section-2-Assembly-of-the-Y-Unit)
 
 ## Documentation
 Addon documentation is to be found [here.](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Animation/O3DE_Manual_Utils)   

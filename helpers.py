@@ -41,7 +41,7 @@ def set_keyframes(context, ob):
             ob.keyframe_insert(data_path='hide_render')
     except RuntimeError:
         pass
-    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
     
 # unset keyframes
 def unset_keyframes(context, ob):
@@ -57,7 +57,7 @@ def unset_keyframes(context, ob):
             ob.keyframe_delete(data_path='hide_render')
     except RuntimeError:
         pass
-    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
 
 # set keys on Mesh/Curve objects
 def set_meshcurve(self, context):
@@ -65,6 +65,7 @@ def set_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on Mesh/Curve objects        
 def unset_meshcurve(self, context):
@@ -72,6 +73,7 @@ def unset_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
                     
 # set keys on visible Mesh/Curve objects
 def set_visible_meshcurve(self, context):
@@ -79,6 +81,7 @@ def set_visible_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and ob.hide == False and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on visible Mesh/Curve objects        
 def unset_visible_meshcurve(self, context):
@@ -86,6 +89,7 @@ def unset_visible_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and ob.hide == False and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # set keys on invisible Mesh/Curve objects
 def set_invisible_meshcurve(self, context):
@@ -93,6 +97,7 @@ def set_invisible_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and ob.hide == True and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on invisible Mesh/Curve objects        
 def unset_invisible_meshcurve(self, context):
@@ -100,6 +105,7 @@ def unset_invisible_meshcurve(self, context):
     for ob in _objects:
         if (ob.type == 'MESH' or ob.type == 'CURVE') and ob.hide == True and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # set keys on Camer/Lamp objects
 def set_cameralamp(self, context):
@@ -107,6 +113,7 @@ def set_cameralamp(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP') and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on Camera/Lamp objects        
 def unset_cameralamp(self, context):
@@ -114,6 +121,7 @@ def unset_cameralamp(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP') and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # set keys on selected objects
 def set_selected(self, context):
@@ -121,6 +129,7 @@ def set_selected(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP' or ob.type == 'MESH' or ob.type == 'CURVE') and ob.select == True and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on selected objects        
 def unset_selected(self, context):
@@ -128,6 +137,7 @@ def unset_selected(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP' or ob.type == 'MESH' or ob.type == 'CURVE') and ob.select == True and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # set keys on all objects
 def set_all(self, context):
@@ -135,6 +145,7 @@ def set_all(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP' or ob.type == 'MESH' or ob.type == 'CURVE') and context.scene in (x for x in ob.users_scene):
             set_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # unset keys on all objects        
 def unset_all(self, context):
@@ -142,6 +153,7 @@ def unset_all(self, context):
     for ob in _objects:
         if (ob.type == 'CAMERA' or ob.type == 'LAMP' or ob.type == 'MESH' or ob.type == 'CURVE') and context.scene in (x for x in ob.users_scene):
             unset_keyframes(context, ob)
+    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
 
 # toggle hide/hide_render on all selected objects
 def toggle_hide_selected(self, context):
